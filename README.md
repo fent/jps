@@ -16,7 +16,7 @@ jps.getTorrents({ cookie: 'cookiegoeshere'}, function(err, torrents) {
       newt++;
     }
   }
-  console.log('There are ', newt, 'new torrents!');
+  console.log('There are', newt, 'new torrents!');
 });
 ```
 
@@ -62,7 +62,7 @@ Gets a list of torrents. `options` must be passed in a `cookie` field to be able
 ```
 
 ### jps.parseTorrents(html, callback(err, torrents))
-Like `getTorrents` but you must provide the `html` yourself.
+Like `getTorrents` but you must provide the `html` string yourself.
 
 ### jps.markOld([callback(err)])
 Marks torrents you've already seen old.

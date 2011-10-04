@@ -17,7 +17,7 @@
     "ent": ">=0.0.4",
     "f": ">=0.0.1"
   },
-  "devDependencies': {
+  "devDependencies": {
     "nock": ">=0.1.7",
     "vows": ">=0.5.11",
     "eyes": ">=0.1.6"
@@ -25,6 +25,5 @@
   "licenses": [ {
     "type": "MIT",
     "url" : "http://github.com/fent/jps/raw/master/LICENSE"
-  "
   }]
 }

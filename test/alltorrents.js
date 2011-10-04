@@ -4,7 +4,7 @@ inspect = require('eyes').inspector({maxLength: 0});
 
 
 nock('http://jpopsuki.eu')
-  .get('/ajax.php?section=torrents')
+  .get('/torrents.php')
   .replyWithFile(200, __dirname + '/torrents.html')
   .get('/torrents.php?action=markold')
   .reply(200, '')

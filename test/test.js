@@ -5,7 +5,7 @@ var jps = require('../lib/scraper')
 
 
 nock('http://jpopsuki.eu')
-  .get('/ajax.php?section=torrents')
+  .get('/torrents.php')
   .replyWithFile(200, __dirname + '/torrents.html')
   .get('/torrents.php?action=markold')
   .reply(200, '')
@@ -20,10 +20,10 @@ vows.describe('jpopsuki')
       },
 
       'no error': function(err, torrents) {
-        if (err) throw err;
         assert.isNull(err, err ? err.message : '');
       },
       'less new than old': function(err, torrents) {
+        assert.ok(torrents);
         newtorrents = 0
         for (var i; i < torrents.length; i++) {
           if (torrents[i].new) {

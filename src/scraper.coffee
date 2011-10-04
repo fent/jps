@@ -7,8 +7,8 @@ f       = require 'f'
 
 # requests jpopsuki and gets list of torrents
 getTorrents = (options = {}, callback) ->
-  query = if options.query then '&' + options.query else ''
-  options.uri = 'http://jpopsuki.eu/ajax.php?section=torrents' + query
+  query = if options.query then '?' + options.query else ''
+  options.uri = 'http://jpopsuki.eu/torrents.php' + query
   options.headers ?= {}
   options.headers.Cookie = options.cookie
   request options, (err, res, body) ->
@@ -109,7 +109,7 @@ parseTorrents = (body, callback) ->
 
 parseArtist = (a) ->
   parsedHref = url.parse(ent.decode(a.attr('href')), true)
-  if parsedHref.pathname isnt '/artist.php'
+  if parsedHref.pathname isnt 'artist.php'
     return null
   rs = /^(.+)?( \(View Artist\))|(View Artist)$/.exec a.attr('title')
 

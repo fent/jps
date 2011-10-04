@@ -25,10 +25,15 @@ markOld = (options = {}, callback) ->
   options.uri = 'http://jpopsuki.eu/torrents.php?action=markold'
   options.headers ?= {}
   options.headers.Cookie = options.cookie
-  request options, (err, res) ->
+  request options, (err, res, body) ->
     return callback err if err
     if res.statusCode isnt 200
       return callback new Error 'Response Error: ' + res.statusCode
+
+    table = $('table#torrent_table', body)
+    if table.length is 0
+      return callback new Error 'Unable to log in!'
+    callback null
 
 
 # parses webpage after request

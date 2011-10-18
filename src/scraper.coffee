@@ -94,8 +94,8 @@ parseTorrents = (body, callback) ->
       t.artist = parseArtist td3a.eq(2)
 
 
-      parsedHref = url.parse(ent.decode(td3a.eq(3).attr('href')), true)
       n = if t.artist is null then 2 else 3
+      parsedHref = url.parse(ent.decode(td3a.eq(n).attr('href')), true)
       r = parseRelease parsedHref.query.id, td3a.eq(n), tds, true
 
       # relesae info

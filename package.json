@@ -1,7 +1,7 @@
 {
   "name": "jps",
-  "description": "A scraper for the jpopsuki tracker",
-  "version": "0.0.3",
+  "description": "A scraper for the jpopsuki torrent tracker",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "git://github.com/fent/jps.git"

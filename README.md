@@ -1,9 +1,3 @@
-Install
-------------
-
-    npm install jps
-
-
 Usage
 ------------------
 ```javascript
@@ -84,3 +78,18 @@ Returns the link to a release's page.
 
 ### jps.downloadLink(torrentid)
 Returns the link to a torrent's download. Excluding the `authkey` and `torrent_pass` fields in the url.
+
+
+Install
+------------
+
+    npm install jps
+
+
+Tests
+---------
+Tests are written with [vows](http://vowsjs.org/)
+
+```bash
+npm test
+```

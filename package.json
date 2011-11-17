@@ -8,6 +8,9 @@
   },
   "author": "fent (https://github.com/fent)",
   "main": "./lib/scraper.js",
+  "scripts": {
+    "test": "vows test/test.js --spec"
+  },
   "engines": {
     "node": "*"
   },

@@ -1,6 +1,6 @@
 url     = require 'url'
 request = require 'request'
-$       = require('jq').jQuery
+$       = require 'jquery'
 ent     = require 'ent'
 f       = require 'f'
 

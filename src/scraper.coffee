@@ -152,7 +152,7 @@ parseRelease = (id, a, tds, single) ->
   str: str
   release:
     id       : parseInt id
-    type     : tds.eq(1).first().text().trim
+    type     : tds.eq(1).first().text().trim()
     title    : title
     orgtitle : orgtitle
     date     : parseDate title, date

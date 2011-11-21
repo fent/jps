@@ -2,7 +2,7 @@ url     = require 'url'
 request = require 'request'
 $       = require 'jquery'
 ent     = require 'ent'
-f       = require 'f'
+clone   = require './clone'
 
 
 # requests jpopsuki and gets list of torrents
@@ -70,7 +70,7 @@ parseTorrents = (body, callback) ->
 
     # check if this is a subgroup
     else if tr.is '.group_torrent_redline, .group_torrent'
-      t = f.obj.clone last
+      t = clone last
       t.new = tr.hasClass 'group_torrent_redline'
 
       # torrent info

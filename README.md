@@ -1,4 +1,4 @@
-# jps [![Build Status](https://secure.travis-ci.org/fent/jps.png)](http://travis-ci.org/fent/jps)
+# jps
 
 A small scraper for the jpopsuki tracker
 

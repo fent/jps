@@ -77,7 +77,7 @@ parseTorrents = (body, callback) ->
       tAnchor = tds.first().find('a').eq(2)
       parsedHref = url.parse(ent.decode(tAnchor.attr('href')), true)
       t.torrent = parseTorrentInfo parsedHref.query.torrentid,
-                                      f.str.rtrim(tAnchor.text()),
+                                     tAnchor.text().trim(),
                                       tds, false
 
       torrents.push t
@@ -119,20 +119,20 @@ parseArtist = (a) ->
   rs = /^(.+)?( \(View Artist\))|(View Artist)$/.exec a.attr('title')
 
   id      : parseInt parsedHref.query.id
-  name    : ent.decode f.str.rtrim a.text()
+  name    : ent.decode a.text().trim()
   orgname : rs[1] or null
 
 
 parseRelease = (id, a, tds, single) ->
   # get release id and title
-  title = ent.decode f.str.rtrim a.text()
+  title = ent.decode a.text().trim()
   rs = /^(.+)?( \(View Torrent\))|(View Torrent)$/.exec a.attr('title')
   orgtitle = rs[1] or null
 
-  td3split = f.str.trim(tds.eq(3).text()).split('\t\t\t')
+  td3split = tds.eq(3).text().trim().split('\t\t\t')
   if single
     regex = /^(\[(\S+( \/ [^\/\]]+)*)\] ?)?(\[((\d|\.)+)\])?( ?\((\d+)\))?$/
-    data = f.str.trim td3split[3]
+    data = td3split[3].trim()
     if data isnt ''
       rs = regex.exec data
       str = rs[2]
@@ -141,7 +141,7 @@ parseRelease = (id, a, tds, single) ->
     tags = td3split[4]
   else
     regex = /(\s+\[((\d|\.)+)\])?(\s+\((\d+)\))?$/
-    data = f.str.trim td3split[0]
+    data = td3split[0].trim()
     if data isnt ''
       rs = regex.exec data
       str = rs[1]
@@ -152,12 +152,12 @@ parseRelease = (id, a, tds, single) ->
   str: str
   release:
     id       : parseInt id
-    type     : f.str.rtrim tds.eq(1).first().text()
+    type     : tds.eq(1).first().text().trim
     title    : title
     orgtitle : orgtitle
     date     : parseDate title, date
     comments : parseInt(comments) or 0
-    tags     : if tags then f.str.trim(tags).split ', ' else []
+    tags     : if tags then tags.trim().split ', ' else []
 
 
 parseDate = (title, date) ->
@@ -194,12 +194,12 @@ parseTorrentInfo = (id, str, tds, single) ->
   source    : source or null
   reissue   : if reissue then ent.decode reissue else null
   freeleech : freeleech or false
-  files     : parseInt f.str.rtrim tds.eq(1 + n).text()
-  added     : f.str.rtrim tds.eq(2 + n).text()
-  size      : f.str.rtrim tds.eq(3 + n).text()
-  snatchers : parseInt f.str.rtrim tds.eq(4 + n).text()
-  seeders   : parseInt f.str.rtrim tds.eq(5 + n).text()
-  leechers  : parseInt f.str.rtrim tds.eq(6 + n).text()
+  files     : parseInt tds.eq(1 + n).text().trim()
+  added     : tds.eq(2 + n).text().trim()
+  size      : tds.eq(3 + n).text().trim()
+  snatchers : parseInt tds.eq(4 + n).text().trim()
+  seeders   : parseInt tds.eq(5 + n).text().trim()
+  leechers  : parseInt tds.eq(6 + n).text().trim()
 
 
 # export

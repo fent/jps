@@ -1,5 +1,9 @@
-Usage
-------------------
+# jps [![Build Status](https://secure.travis-ci.org/fent/jps.png)](http://travis-ci.org/fent/jps)
+
+A small scraper for the jpopsuki tracker
+
+# Usage
+
 ```javascript
 var jps = require('jps');
 
@@ -15,8 +19,8 @@ jps.getTorrents({ cookie: 'cookiegoeshere'}, function(err, torrents) {
 ```
 
 
-API
----
+# API
+
 ### jps.getTorrents(options, callback(err, torrents))
 Gets a list of torrents. `options` must be passed in a `cookie` field to be able to access jpopsuki. Optionally, a `query` field can be passed in options too to request a more specific torrent search. The `callback` gets an array of torrents if successful. The torrent object looks like this:
 
@@ -80,16 +84,20 @@ Returns the link to a release's page.
 Returns the link to a torrent's download. Excluding the `authkey` and `torrent_pass` fields in the url.
 
 
-Install
-------------
+# Install
 
     npm install jps
 
 
-Tests
----------
+# Tests
+
 Tests are written with [vows](http://vowsjs.org/)
 
 ```bash
 npm test
 ```
+
+
+# License
+
+MIT

@@ -17,8 +17,7 @@
   "dependencies": {
     "request": "=2.1.1",
     "jquery": ">=1.6.0",
-    "ent": ">=0.0.4",
-    "f": ">=0.0.1"
+    "ent": ">=0.0.4"
   },
   "devDependencies": {
     "nock": ">=0.1.7",

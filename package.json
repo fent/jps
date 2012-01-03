@@ -15,9 +15,9 @@
     "node": "*"
   },
   "dependencies": {
-    "request": "=2.1.1",
-    "jquery": ">=1.6.0",
-    "ent": ">=0.0.4"
+    "request": "2.1.x",
+    "jquery": "1.6.x",
+    "ent": "0.0.x"
   },
   "devDependencies": {
     "nock": "0.1.x",

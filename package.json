@@ -20,9 +20,9 @@
     "ent": ">=0.0.4"
   },
   "devDependencies": {
-    "nock": ">=0.1.7",
-    "vows": ">=0.5.11",
-    "eyes": ">=0.1.6"
+    "nock": "0.1.x",
+    "vows": "0.5.x",
+    "eyes": "0.1.x"
   },
   "licenses": [ {
     "type": "MIT",

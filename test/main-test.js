@@ -1,12 +1,14 @@
-var jps = require('../lib/scraper')
-   nock = require('nock'),
-   vows = require('vows'),
- assert = require('assert');
+var jps = require('..')
+  , nock = require('nock')
+  , vows = require('vows')
+  , assert = require('assert')
+  , path = require('path')
+
 
 
 nock('http://jpopsuki.eu')
   .get('/torrents.php')
-  .replyWithFile(200, __dirname + '/torrents3.html')
+  .replyWithFile(200, path.join(__dirname, 'torrents3.html'))
   .get('/torrents.php?action=markold')
   .reply(200, '')
 

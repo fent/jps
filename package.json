@@ -11,9 +11,6 @@
   "scripts": {
     "test": "vows test/*-test.js --spec"
   },
-  "engines": {
-    "node": "*"
-  },
   "dependencies": {
     "request": "2.1.x",
     "jquery": "1.6.x",

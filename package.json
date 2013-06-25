@@ -13,13 +13,13 @@
   },
   "dependencies": {
     "he": "~0.1.1",
-    "jquery": "1.6.x",
-    "request": "2.1.x"
+    "jquery": "~1.6.3",
+    "request": "~2.1.1"
   },
   "devDependencies": {
-    "eyes": "0.1.x",
-    "nock": "0.1.x",
-    "vows": "0.5.x"
+    "eyes": "~0.1.7",
+    "nock": "~0.1.7",
+    "vows": "~0.5.13"
   },
   "licenses": [ {
     "type": "MIT",

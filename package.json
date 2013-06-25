@@ -12,14 +12,14 @@
     "test": "vows test/*-test.js --spec"
   },
   "dependencies": {
-    "request": "2.1.x",
+    "he": "~0.1.1",
     "jquery": "1.6.x",
-    "ent": "0.0.x"
+    "request": "2.1.x"
   },
   "devDependencies": {
+    "eyes": "0.1.x",
     "nock": "0.1.x",
-    "vows": "0.5.x",
-    "eyes": "0.1.x"
+    "vows": "0.5.x"
   },
   "licenses": [ {
     "type": "MIT",

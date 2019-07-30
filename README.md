@@ -1,5 +1,7 @@
 # jps
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fent/jps.svg)](https://greenkeeper.io/)
+
 A small scraper for the jpopsuki tracker
 
 # Usage

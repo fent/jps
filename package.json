@@ -12,8 +12,8 @@
     "test": "vows test/*-test.js --spec"
   },
   "dependencies": {
-    "cheerio": "^0.18.0",
-    "he": "^0.1.1",
+    "cheerio": "^0.22.0",
+    "he": "^1.2.0",
     "request": "^2.1.1"
   },
   "devDependencies": {
